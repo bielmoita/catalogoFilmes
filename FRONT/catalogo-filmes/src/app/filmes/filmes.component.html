@@ -1,1 +1,38 @@
-<p>filmes works!</p>
+<div class="container">
+    <h1 class="text-center">Listando os Filmes</h1>
+    <p>
+        Agora vou listar alguns filmes para você. Mas sinta-se a vontade para pesquisar ou visualizar. 
+    </p>
+
+    <div class="input-group mb-2">
+        <input type="text" class="form-control" placeholder="Busque aqui seu filme. Ex: Kill Bill" aria-label="Busque seu filme" aria-describedby="Busque seu filme" [(ngModel)]="titulo">
+        <div class="input-group-append">
+          <button class="btn btn-outline-secondary" type="button" id="button-addon2" (click)=pesquisarPorTitulo() >Pesquisar</button>
+        </div>
+      </div>
+
+    <!-- <input type="text" name="" placeholder="Busque aqui seu pokemon. EX: Pikachu" [(ngModel)]="name"> -->
+    <!-- <button type="submit" (click)=pesquisarPorNome() >Pesquisar</button> -->
+    
+    <div class="row justify-content-center mt-5">
+    <div class="mr-4 mb-4 container-card"  *ngFor="let filmes of listaFilmes">
+        <!-- Tem que trazer: ID, Nome, Nationalpokedexnumber, hp, imageUrl -->
+                <div class="card container-card">
+                    <div class="card-body  mt-3">
+                        <a  [routerLink]="'/verFilme/' + filmes.id"> <img [src]="filmes.imagem" alt=""></a>
+                    
+                        <p class="card-title title mt-4">Filme : {{ filmes.titulo }}</p>
+                        <div class="textCard mb-4">
+                            <span> ID: {{ filmes.id }}</span>
+                            <span> Diretor: {{ filmes.diretor }}</span>
+                            <span>Genero: {{ filmes.genero }}</span>
+                            <span>Ano: {{ filmes.anoFilme }}</span>
+
+                        </div>
+                            <a [routerLink]="'/verFilme/' + filmes.id" class="btn btn-primary">Ver Sinopse</a>
+                    </div>
+                </div>
+        </div>
+
+    </div>
+</div>
