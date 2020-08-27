@@ -1,0 +1,11 @@
+.btn-principal{
+    border: 3px solid #8a05be;
+    background-color: white;
+    color: #8a05be ;
+}
+
+.btn-principal:hover{
+    border: 3px solid #696969;
+    background-color: #8a05be;
+    color: white;
+}

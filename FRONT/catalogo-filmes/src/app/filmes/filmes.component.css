@@ -1,0 +1,32 @@
+img{
+    width: 14rem;
+}
+
+.title{
+    font-weight: bold;
+    width: 160px;
+}
+
+.container-card{
+    height: 600px;
+}
+
+.textCard{
+    display: flex;
+    flex-direction: column;
+}
+
+.btn-principal{
+    border: 3px solid #8a05be;
+    background-color: white;
+}
+
+.btn-principal:hover{
+    border: 3px solid #696969;
+    background-color: #8a05be;
+    color: white;
+}
+
+.color-primary{
+    color: #8a05be;
+}

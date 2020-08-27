@@ -1,4 +1,5 @@
 export class Filme{
+   public id:string;
    public titulo:string;
    public diretor:string;
    public genero:string;

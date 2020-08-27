@@ -10,6 +10,10 @@ ul.social-network {
     margin: 0;
     padding: 5px;
   }
+
+  .footer-copyright{
+    background-color:indigo;
+  }
  
  .faFacebook, .faLinkedin, .faInstagram{
       color: white;

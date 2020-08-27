@@ -19,9 +19,15 @@ export class FilmesService {
 
   GetByTitulo(titulo : string){
     return this.http.get(`http://localhost:8080/filmes/titulo/${titulo}`).pipe(
-      map((resp: ResultFilmes) => resp.filmes)
+      map((resp: any) => resp.filmes)
     )
 
+  }
+
+  getFilmeById(id: string){
+    return this.http.get(`http://localhost:8080/filmes/titulo/${id}`).pipe(
+      map((resp:any) => resp.card)
+    )
   }
 
 

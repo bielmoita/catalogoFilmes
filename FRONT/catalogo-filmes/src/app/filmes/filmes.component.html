@@ -1,5 +1,5 @@
 <div class="container">
-    <h1 class="text-center">Listando os Filmes</h1>
+    <h1 class="text-center color-primary">Listando os Filmes</h1>
     <p>
         Agora vou listar alguns filmes para você. Mas sinta-se a vontade para pesquisar ou visualizar. 
     </p>
@@ -10,26 +10,27 @@
           <button class="btn btn-outline-secondary" type="button" id="button-addon2" (click)=pesquisarPorTitulo() >Pesquisar</button>
         </div>
       </div>
-
-    <!-- <input type="text" name="" placeholder="Busque aqui seu pokemon. EX: Pikachu" [(ngModel)]="name"> -->
-    <!-- <button type="submit" (click)=pesquisarPorNome() >Pesquisar</button> -->
-    
+      <div class="mt-5 text-center">
+        <hr>
+            <p>Deseja adicionar um filmes seu filme favorito?</p>
+            <a class="btn btn-principal color-primary">Adicionar Filme</a>
+        <hr>
+      </div>
+      
     <div class="row justify-content-center mt-5">
     <div class="mr-4 mb-4 container-card"  *ngFor="let filmes of listaFilmes">
-        <!-- Tem que trazer: ID, Nome, Nationalpokedexnumber, hp, imageUrl -->
                 <div class="card container-card">
                     <div class="card-body  mt-3">
                         <a  [routerLink]="'/verFilme/' + filmes.id"> <img [src]="filmes.imagem" alt=""></a>
-                    
-                        <p class="card-title title mt-4">Filme : {{ filmes.titulo }}</p>
-                        <div class="textCard mb-4">
-                            <span> ID: {{ filmes.id }}</span>
-                            <span> Diretor: {{ filmes.diretor }}</span>
-                            <span>Genero: {{ filmes.genero }}</span>
-                            <span>Ano: {{ filmes.anoFilme }}</span>
 
+                        <p class="card-title title color-primary mt-4">Filme : {{ filmes.titulo }}</p>
+                        <div class="textCard mb-4">
+                            <span> <b>ID:</b> {{ filmes.id }}</span>
+                            <span><b>Diretor:</b> {{ filmes.diretor }}</span>
+                            <span><b>Genero:</b> {{ filmes.genero }}</span>
+                            <span><b>Ano:</b> {{ filmes.anoFilme }}</span>
                         </div>
-                            <a [routerLink]="'/verFilme/' + filmes.id" class="btn btn-primary">Ver Sinopse</a>
+                            <a [routerLink]="'/verFilme/' + filmes.id" class="btn btn-principal color-primary">Ver Sinopse</a>
                     </div>
                 </div>
         </div>
