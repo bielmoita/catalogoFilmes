@@ -30,33 +30,33 @@ public class FilmeController {
 		return ResponseEntity.ok(repository.findAll());
 	}
 	
-	@GetMapping("/{codigoDoFilme}")
-	public ResponseEntity<Filme> GetById(@PathVariable long codigoDoFilme){
-		return repository.findById(codigoDoFilme)
-				.map(resp -> ResponseEntity.ok(resp)).orElse(ResponseEntity.notFound().build());
-	}
+	//@GetMapping("/{codigoDoFilme}")
+	//public ResponseEntity<Filme> GetById(@PathVariable long codigoDoFilme){
+		//return repository.findById(codigoDoFilme)
+				//.map(resp -> ResponseEntity.ok(resp)).orElse(ResponseEntity.notFound().build());
+	//}
 	
-	@GetMapping("/titulo/{titulo}")
-	public ResponseEntity<List<Filme>> GetByNome(@PathVariable String titulo){
-		return ResponseEntity.ok(repository.findAllByTituloContainingIgnoreCase(titulo));
+	//@GetMapping("/titulo/{titulo}")
+	//public ResponseEntity<List<Filme>> GetByNome(@PathVariable String titulo){
+		//return ResponseEntity.ok(repository.findAllByTituloContainingIgnoreCase(titulo));
 		
-	}
+	//}
 	
-	@PostMapping
-	public ResponseEntity<Filme> post (@RequestBody Filme filme){
-		return ResponseEntity.status(HttpStatus.CREATED).body(repository.save(filme));
+	//@PostMapping
+	//public ResponseEntity<Filme> post (@RequestBody Filme filme){
+		//return ResponseEntity.status(HttpStatus.CREATED).body(repository.save(filme));
 		
-	}
+	//}
 	
-	@PutMapping
-	public ResponseEntity<Filme> put (@RequestBody Filme filme){
-		return ResponseEntity.status(HttpStatus.OK).body(repository.save(filme));
-	}
+	//@PutMapping
+	//public ResponseEntity<Filme> put (@RequestBody Filme filme){
+		//return ResponseEntity.status(HttpStatus.OK).body(repository.save(filme));
+	//}
 	
-	@DeleteMapping("/{codigoDoFilme}")
-	public void delete(@PathVariable long codigoDoFilme) {
-		repository.deleteById(codigoDoFilme);
-	}
+	//@DeleteMapping("/{codigoDoFilme}")
+	//public void delete(@PathVariable long codigoDoFilme) {
+		//repository.deleteById(codigoDoFilme);
+	//}
 	
 	
 
