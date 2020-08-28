@@ -10,5 +10,7 @@ import com.stefanini.catalogo.filmes.model.Filme;
 @Repository
 public interface FilmeRepository extends JpaRepository<Filme, Long> {
 	public List<Filme> findAllByTituloContainingIgnoreCase(String titulo);
+	
+	public List<Filme> findAllByGeneroContainingIgnoreCase(String genero);
 
 }

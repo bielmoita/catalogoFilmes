@@ -1,0 +1,24 @@
+INSERT INTO tb_filme 
+(ano_filme, diretor, genero, imagem, sinopse, titulo) 
+VALUES 
+('2001', 'Quentin Tarantino', 'Ação', 'https://i.imgur.com/ruiRJXK.png', 'Django mata todo mundo em vingança', 'Django Livre');
+
+
+INSERT INTO tb_filme 
+(ano_filme, diretor, genero, imagem, sinopse, titulo) 
+VALUES 
+('2005', 'Quentin Tarantino', 'Ação', 'https://i.imgur.com/ugup0cV.jpg', 'A noiva vai em busca de sua vingança e ela sera sangrenta', 'Kill Bill');
+
+
+INSERT INTO tb_filme 
+(ano_filme, diretor, genero, imagem, sinopse, titulo) 
+VALUES 
+('2008', 'Dirigido pela Pixar', 'Animação', 'https://i.imgur.com/SB6kroM.jpg', 'Quem vai manter a fabrica de sustos de monstros S/A', 'Monstros S/A');
+
+
+INSERT INTO tb_filme 
+(ano_filme, diretor, genero, imagem, sinopse, titulo) 
+VALUES 
+('2014', 'Stan Lee', 'Ficção Cientifica', 'https://i.imgur.com/toUcLOD.jpg', 'Quem são os Guardiões da Galáxia, assita esse filme épico', 'Guardiões da Galaxia');
+
+
