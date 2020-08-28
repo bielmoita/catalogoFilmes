@@ -7,30 +7,49 @@
     <div class="input-group mb-2">
         <input type="text" class="form-control" placeholder="Busque aqui seu filme. Ex: Kill Bill" aria-label="Busque seu filme" aria-describedby="Busque seu filme" [(ngModel)]="titulo">
         <div class="input-group-append">
-          <button class="btn btn-outline-secondary" type="button" id="button-addon2" (click)=pesquisarPorTitulo() >Pesquisar</button>
+          <button class="btn btn-outline-secondary" type="button" id="button-addon2" (click)=pesquisarPorTitulo() >Pesquisar</button>          
         </div>
+        <!-- <select name="genero" id="genero"  >
+            <option value="acao" >Ação</option>
+            <option value="animacao" >Animação</option>
+            <option value="aventura" >Aventura</option>
+            <option value="comedia" >Comédia</option>
+            <option value="ficcao" >Ficção científica</option>
+            <option value="outros" >Outros</option>
+        </select> -->
       </div>
+      <div class="d-flex justify-content-around">
+        <form class="form-inline navbar-light bg-light horizontal" [(ngModel)]="genero">
+            <span class="col btn btn-outline-get" style="border: none;" (click)='buscaAcao()'>Ação</span>
+            <span class="col btn btn-outline-get" style="border: none;" (click)='buscaAnimacao()'>Animacao</span>
+            <span class="col btn btn-outline-get" style="border: none;" (click)='buscaAventura()'>Aventura</span>
+            <span class="col btn btn-outline-get" style="border: none;" (click)='buscaComedia()'>Comedia</span>
+            <span class="col btn btn-outline-get" style="border: none;" (click)='buscaFiccao()'>Ficção</span>
+            <span class="col btn btn-outline-get" style="border: none;" (click)='buscaOutros()'>Outros</span>
+        </form>
+    </div>
       <div class="mt-5 text-center">
         <hr>
             <p>Deseja adicionar um filmes seu filme favorito?</p>
-            <a class="btn btn-principal color-primary">Adicionar Filme</a>
+            <a class="btn btn-principal color-primary " routerLink='/cadastro'>Adicionar Filme</a>
         <hr>
       </div>
       
     <div class="row justify-content-center mt-5">
     <div class="mr-4 mb-4 container-card"  *ngFor="let filmes of listaFilmes">
+        <!-- <pre>{{filmes | json}}</pre> -->
                 <div class="card container-card">
                     <div class="card-body  mt-3">
-                        <a  [routerLink]="'/verFilme/' + filmes.id"> <img [src]="filmes.imagem" alt=""></a>
+                        <a  [routerLink]="'/verFilme/' + filmes.codigoDoFilme"> <img [src]="filmes.imagem" alt=""></a>
 
                         <p class="card-title title color-primary mt-4">Filme : {{ filmes.titulo }}</p>
                         <div class="textCard mb-4">
-                            <span> <b>ID:</b> {{ filmes.id }}</span>
+                            <span> <b>ID:</b> {{ filmes.codigoDoFilme }}</span>
                             <span><b>Diretor:</b> {{ filmes.diretor }}</span>
                             <span><b>Genero:</b> {{ filmes.genero }}</span>
                             <span><b>Ano:</b> {{ filmes.anoFilme }}</span>
                         </div>
-                            <a [routerLink]="'/verFilme/' + filmes.id" class="btn btn-principal color-primary">Ver Sinopse</a>
+                            <a [routerLink]="'/verFilme/' + filmes.codigoDoFilme" class="btn btn-principal color-primary">Ver Sinopse</a>
                     </div>
                 </div>
         </div>

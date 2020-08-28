@@ -1,12 +1,12 @@
 export class Filme{
-   public id:string;
+   public codigoDoFilme:number;
    public titulo:string;
    public diretor:string;
    public genero:string;
    public sinopse:string;
    public anoFilme:string;
 
-    imagem:string;
+   public imagem:string;
 }
 
 

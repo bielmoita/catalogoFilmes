@@ -10,18 +10,36 @@ import { FilmesService } from '../service/filmes.service';
 })
 export class VerFilmeComponent implements OnInit {
 
-  filme: Filme;
+  filme:Filme = new Filme;
+
+  codigoDoFilmeString: string
 
   constructor(private filmesService: FilmesService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
 
-    let id = this.route.snapshot.params['id']
-    this.filmesService.getFilmeById(id).subscribe((resp:Filme) => {
-      this.filme = resp;
-    })
+    let codigoDoFilme = this.route.snapshot.params['id']
 
+    this.findById(codigoDoFilme)
+    
+    // this.filmesService.getFilmeById(codigoDoFilme).subscribe((resp:Filme) => {
+    //   this.filme = resp;
+    // })
     window.scroll(0, 0)
+  }
+
+  findById(codigoDoFilme:number){
+    this.filmesService.getFilmeById(codigoDoFilme).subscribe(
+      (resp: Filme) =>{
+        this.filme = resp
+      })
+  }
+
+  EditarFilme(codigoDoFilme: number) {
+    this.codigoDoFilmeString = codigoDoFilme.toString()
+    localStorage.setItem('editarFilme', this.codigoDoFilmeString)
+    this.router.navigate(['/cadastro'])  
+    window.scroll(0, 0);
   }
 
 }

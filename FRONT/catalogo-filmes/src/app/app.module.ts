@@ -13,6 +13,7 @@ import { VerFilmeComponent } from './ver-filme/ver-filme.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { CadastroDeFilmesComponent } from './cadastro-de-filmes/cadastro-de-filmes.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     FooterComponent,
     SobreComponent,
     FilmesComponent,
-    VerFilmeComponent
+    VerFilmeComponent,
+    CadastroDeFilmesComponent
   ],
   imports: [
     BrowserModule,

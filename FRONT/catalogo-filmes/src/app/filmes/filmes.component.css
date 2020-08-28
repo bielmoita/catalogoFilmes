@@ -7,9 +7,6 @@ img{
     width: 160px;
 }
 
-.container-card{
-    height: 600px;
-}
 
 .textCard{
     display: flex;
@@ -30,3 +27,13 @@ img{
 .color-primary{
     color: #8a05be;
 }
+
+
+@media (min-width: 1024px) {
+    .container-card{
+        max-height: 700px;
+        height: 70vh;
+    }
+   
+  }
+

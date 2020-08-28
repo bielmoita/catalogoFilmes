@@ -1,0 +1,73 @@
+<div class="container">
+
+    <div class="row mt-5 mb-5">
+        <div class="col-md-12">
+            <h3 class="text-center mb-4 text-monospace">CADASTRAR OU ALTERAR UM FILME</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-3 col-md-3 mr-3 ml-3 p-3 produto-grid">
+            <h5 class="text-center mb-4 text-monospace">PRÉVIA</h5>
+            <div class="imagem">
+                <a>
+                    <img src="{{filme.imagem}}" class="w-100" alt="">
+                    <div class="overlay" type="button" data-toggle="modal" data-target="#exampleModalCenter">
+                        <div class="detalhes" (click)="findByCodigoDoFilme(filme.codigoDoFilme)">
+                            Detalhes
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <h5 class="text-center">{{filme.titulo}}</h5>
+            <h5 class="text-center">{{filme.genero}}</h5>
+
+        </div>
+        <div class="col-md-8">
+            <div class="form-group">
+                <div class=" form-group">
+                    <label for="titulo" class="text-monospace">IMAGEM</label>
+                    <input type="text" id="nome" class="form-control" placeholder="Digite a URL da imagem"
+                        [(ngModel)]="filme.imagem">
+                </div>
+                <label for="titulo" class="text-monospace">TITULO</label>
+                <input type="text" id="nome" class="form-control" placeholder="Digite o titulo do filme"
+                    [(ngModel)]="filme.titulo">
+            </div>
+            <div class="form-group">
+            <label for="genero" class="text-monospace">GENERO</label>
+                
+                <input type="text" id="nome" class="form-control" placeholder="Digite o Genero"
+                    [(ngModel)]="filme.genero">
+            </div>
+            <div class="form-group">
+                <label for="titulo" class="text-monospace">DIRETOR</label>
+                <input type="text" id="nome" class="form-control"
+                    placeholder="informe o Diretor(a) do filme."
+                    [(ngModel)]="filme.diretor">
+            </div>
+            <div class="form-group">
+                <label for="titulo" class="text-monospace">Sinopse</label>
+                <textarea type="text" id="nome" class="form-control" placeholder="Digite a sinopse do filme"
+                    [(ngModel)]="filme.sinopse"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="titulo" class="text-monospace">ANO</label>
+                <textarea type="text" id="nome" class="form-control" placeholder="Digite o ano do Filme: EX: 2001"
+                    [(ngModel)]="filme.anoFilme"></textarea>
+            </div>
+
+
+
+
+
+            <div class="d-flex justify-content-end">
+                <button type="button" class="btn btn-get col-6 col-md-2" (click)="salvar()">SALVAR</button>
+                <button type="button" class="ml-3 btn btn-outline-danger col-5 col-md-2"
+                    (click)="deletar(filme.codigoDoFilme)">REMOVER</button>
+            </div>
+
+        </div>
+    </div>
+
+</div>
